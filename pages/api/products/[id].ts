@@ -13,5 +13,10 @@ export default async function handler(
     // 지금은 그냥 mock 데이터를 사용하여 가져옴
     // const middleWare = new Middleware(request, response)
     // await middleWare.run()
-    response.status(HttpStatusCode.Ok).json(productData.find(product => product.id) || null)
+    const {statusCode} = response
+    const {query} = request
+    switch (statusCode) {
+        case HttpStatusCode.Ok :
+            response.status(statusCode).json(productData.find(product => product.id === parseInt(<string>query.id)) || null)
+    }
 }
