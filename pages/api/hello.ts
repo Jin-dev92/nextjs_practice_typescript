@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type {NextApiRequest, NextApiResponse} from 'next'
-import {Middleware} from "../../cors";
+import {HttpStatusCode} from "axios";
 
 type Data = {
     name: string
@@ -14,5 +14,5 @@ export default function handler(
 ) {
     // const middleWare = new Middleware(req, res)
     // await middleWare.run()
-    res.status(200).json({name: 'John Doe'})
+    res.status(HttpStatusCode.Ok).json({name: 'John Doe'})
 }
