@@ -18,5 +18,13 @@ export default async function handler(
     switch (statusCode) {
         case HttpStatusCode.Ok :
             response.status(statusCode).json(productData.find(product => product.id === parseInt(<string>query.id)) || null)
+            break;
+        case HttpStatusCode.BadRequest :
+            // response.status(statusCode).json(null) // 뭔가 에러 처리
+            break;
+        default:
+            break;
+        // default:
+        //     response.status(statusCode).json(productData.find(product => product.id === parseInt(<string>query.id)) || null)
     }
 }
