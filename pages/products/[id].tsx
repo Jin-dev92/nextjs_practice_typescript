@@ -17,8 +17,8 @@ const ProductsDetailPage: NextPage = ({router}: ExcludeRouterProps<any>) => {
             </ImageWrapper>
             <InformationWrapper>
                 <p className={'title'}>{name}</p>
-                <p>{price}</p>
-                <p>{stock}</p>
+                <p>가격 : {price.toLocaleString()}</p>
+                <p>재고량 : {stock.toLocaleString()}</p>
             </InformationWrapper>
         </FlexContainer>
     )
