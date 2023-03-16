@@ -3,6 +3,8 @@ import {FlexContainer} from "../../components/FlexContainer";
 import {withRouter} from "next/router";
 import {ExcludeRouterProps} from "next/dist/client/with-router";
 import Image from "next/image";
+import {ImageWrapper} from "../../components/ImageWrapper";
+import {InformationWrapper} from "../../components/InformationWrapper";
 
 const ProductsDetailPage: NextPage = ({router}: ExcludeRouterProps<any>) => {
     const {query} = router
@@ -10,13 +12,14 @@ const ProductsDetailPage: NextPage = ({router}: ExcludeRouterProps<any>) => {
     const {name, price, stock, imageSrc} = product
     return (
         <FlexContainer flexDirection={'row'}>
-            <div>
+            <ImageWrapper>
                 <Image src={imageSrc} alt={name} width={100} height={100}/>
-            </div>
-            <div>
+            </ImageWrapper>
+            <InformationWrapper>
+                <p className={'title'}>{name}</p>
                 <p>{price}</p>
                 <p>{stock}</p>
-            </div>
+            </InformationWrapper>
         </FlexContainer>
     )
 }
