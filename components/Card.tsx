@@ -2,6 +2,7 @@ import {ProductData} from "../interfaces/ProductInterface";
 import {FlexContainer} from "./FlexContainer";
 import Image from "next/image";
 import styled from "styled-components";
+import Link from "next/link";
 
 type Props = {
     data: ProductData;
@@ -24,6 +25,10 @@ const StyledCard = styled(FlexContainer)`
   & img {
     object-fit: cover;
   }
+
+  & a {
+    text-align: center;
+  }
 `
 
 const Card = (props: Props) => {
@@ -31,10 +36,18 @@ const Card = (props: Props) => {
     const {id, name, stock, price, imageSrc} = data
     return (
         <StyledCard>
-            <Image src={imageSrc} alt={name} width={width} height={height}/>
-            <title>{name}</title>
-            <p>{price}</p>
-            <p>{stock}</p>
+            <Link href={
+                {
+                    pathname: '/products/[id]',
+                    query: {product: JSON.stringify(data)}
+                }
+            }
+                  as={`/products/${id}`}
+            >
+                <p><Image src={imageSrc} alt={name} width={width} height={height}/></p>
+                <p>{name}</p>
+                <p>{price.toLocaleString().concat(" 원")}</p>
+            </Link>
         </StyledCard>
     )
 }

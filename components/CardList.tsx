@@ -8,10 +8,10 @@ type Props = {
 }
 export const CardList = (props: Props) => {
     let html = []
-    for (const item of props.data) {
+    for (const index in props.data) {
         html.push(
-            <ListItem >
-                <Card data={item} width={100} height={100}/>
+            <ListItem key={'list_item_' + index}>
+                <Card data={props.data[index]} width={100} height={100}/>
             </ListItem>
         )
     }
