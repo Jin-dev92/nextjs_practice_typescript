@@ -3,24 +3,28 @@
     "id": 1,
     "name": "사과",
     "price": 2000,
-    "stock": 9999
+    "stock": 9999,
+    "imageSrc": ""
   },
   {
     "id": 2,
     "name": "배",
     "price": 5000,
-    "stock": 9999
+    "stock": 9999,
+    "imageSrc": ""
   },
   {
     "id": 3,
     "name": "귤",
     "price": 4000,
-    "stock": 9999
+    "stock": 9999,
+    "imageSrc": ""
   },
   {
     "id": 4,
     "name": "포도",
     "price": 10000,
-    "stock": 9999
+    "stock": 9999,
+    "imageSrc": ""
   }
 ]

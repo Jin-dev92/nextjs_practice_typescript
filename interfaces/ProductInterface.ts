@@ -3,4 +3,5 @@ export interface ProductData {
     name: string;
     price: number;
     stock: number;
+    imageSrc: string;
 }
