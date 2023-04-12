@@ -10,9 +10,9 @@ export const CardList = (props: Props) => {
     let html = []
     for (const index in props.data) {
         html.push(
-            <ListItem key={'list_item_' + index}>
-                <Card data={props.data[index]} width={100} height={100}/>
-            </ListItem>
+                <ListItem key={'list_item_' + index}>
+                    <Card data={props.data[index]} width={100} height={100}/>
+                </ListItem>
         )
     }
 

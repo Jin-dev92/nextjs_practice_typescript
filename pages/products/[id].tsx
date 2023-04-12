@@ -1,17 +1,15 @@
 import {NextPage} from "next";
 import {FlexContainer} from "../../components/FlexContainer";
-import {withRouter} from "next/router";
-import {ExcludeRouterProps} from "next/dist/client/with-router";
 import Image from "next/image";
 import {ImageWrapper} from "../../components/ImageWrapper";
 import {InformationWrapper} from "../../components/InformationWrapper";
+import {useRouter} from "next/router";
 
-const ProductsDetailPage: NextPage = ({router}: ExcludeRouterProps<any>) => {
-    const {query} = router
-    const product = JSON.parse(query.product)
-    const {name, price, stock, imageSrc} = product
+const ProductsDetailPage: NextPage = () => {
+    const router = useRouter()
+    const {imageSrc, name, price, stock} = JSON.parse(router.query?.product as string)
     return (
-        <FlexContainer flexDirection={'row'}>
+        <FlexContainer>
             <ImageWrapper>
                 <Image src={imageSrc} alt={name} width={100} height={100}/>
             </ImageWrapper>
@@ -23,4 +21,5 @@ const ProductsDetailPage: NextPage = ({router}: ExcludeRouterProps<any>) => {
         </FlexContainer>
     )
 }
-export default withRouter(ProductsDetailPage)
+
+export default ProductsDetailPage

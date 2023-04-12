@@ -15,6 +15,7 @@ export default async function handler(
     // await middleWare.run()
     const {statusCode} = response
     const {query} = request
+    // console.log(query)
     // switch (statusCode) {
     //     case HttpStatusCode.Ok :
     //         break;
