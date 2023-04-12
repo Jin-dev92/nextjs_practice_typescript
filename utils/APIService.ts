@@ -10,7 +10,7 @@ export const LocalAPI = new API({
 export const ExternalAPI = new API({
     baseURL: 'https://api.themoviedb.org/3',
     headers: {
-        Authorization: 'Bearer '.concat('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0Zjg4N2FhYzZlN2QyODBhMGI1MzljZmIwZmIxM2ZkYSIsInN1YiI6IjY0MWVmMTIyNTRhOGFjMDExMjFlODE3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XzaUQJLiWdd5E-OuTerBXMmKKCawfKHbR4hAS8IFqsk')
+        Authorization: process.env.NEXT_PUBLIC_MOVIE_DB_API_ACCESS_TOKEN && 'Bearer '.concat(process.env.NEXT_PUBLIC_MOVIE_DB_API_ACCESS_TOKEN)
     },
     params: {
         language: 'ko',
