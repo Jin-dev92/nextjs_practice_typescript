@@ -27,7 +27,7 @@ export class API {
         return Promise.reject(err.response || err.message);
     };
 
-    get(url: string, config: AxiosRequestConfig<any> | undefined): Promise<AxiosResponse> {
+    get(url: string, config?: AxiosRequestConfig<any> | undefined): Promise<AxiosResponse> {
         return this.instance.get(url, config)
             .then(this.onSuccess)
             .catch(this.onError)
