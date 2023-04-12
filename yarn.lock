@@ -885,9 +885,9 @@
     "esutils" "^2.0.2"
 
 "electron-to-chromium@^1.4.284":
-  "integrity" "sha512-nEftV1dRX3omlxAj42FwqRZT0i4xd2dIg39sog/CnCJeCcL1TRd2Uh0i9Oebgv8Ou0vzTPw++xc+Z20jzS2B6A=="
-  "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.356.tgz"
-  "version" "1.4.356"
+  "integrity" "sha512-OoVcngKCIuNXtZnsYoqlCvr0Cf3NIPzDIgwUfI9bdTFjXCrr79lI0kwQstLPZ7WhCezLlGksZk/BFAzoXC7GDw=="
+  "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.359.tgz"
+  "version" "1.4.359"
 
 "emoji-regex@^9.2.2":
   "integrity" "sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg=="
@@ -2386,7 +2386,7 @@
     "get-intrinsic" "^1.1.3"
     "is-regex" "^1.1.4"
 
-"sass@^1.3.0", "sass@^1.62.0":
+"sass@^1.3.0":
   "integrity" "sha512-Q4USplo4pLYgCi+XlipZCWUQz5pkg/ruSSgJ0WRDSb/+3z9tXUOkQ7QPYn4XrhZKYAK4HlpaQecRwKLJX6+DBg=="
   "resolved" "https://registry.npmjs.org/sass/-/sass-1.62.0.tgz"
   "version" "1.62.0"
@@ -2544,10 +2544,11 @@
     "client-only" "0.0.1"
 
 "sucrase@^3.29.0":
-  "integrity" "sha512-6QsHnkqyVEzYcaiHsOKkzOtOgdJcb8i54x6AV2hDwyZcY9ZyykGZVw6L/YN98xC0evwTP6utsWWrKRaa8QlfEQ=="
-  "resolved" "https://registry.npmjs.org/sucrase/-/sucrase-3.31.0.tgz"
-  "version" "3.31.0"
+  "integrity" "sha512-ydQOU34rpSyj2TGyz4D2p8rbktIOZ8QY9s+DGLvFU1i5pWJE8vkpruCjGCMHsdXwnD7JDcS+noSwM/a7zyNFDQ=="
+  "resolved" "https://registry.npmjs.org/sucrase/-/sucrase-3.32.0.tgz"
+  "version" "3.32.0"
   dependencies:
+    "@jridgewell/gen-mapping" "^0.3.2"
     "commander" "^4.0.0"
     "glob" "7.1.6"
     "lines-and-columns" "^1.1.6"
