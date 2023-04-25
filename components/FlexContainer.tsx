@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import {Property} from "csstype";
-import FlexDirection = Property.FlexDirection;
+// import FlexDirection = Property.FlexDirection;
 
 type Props = {
-    flexDirection?: FlexDirection
+    flexDirection?: Property.FlexDirection
 }
 export const FlexContainer = styled.div`
   display: flex;

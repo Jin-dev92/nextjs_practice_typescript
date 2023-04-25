@@ -8,7 +8,7 @@ function MyApp({Component, pageProps}: AppProps) {
     * */
     const store = useStore(pageProps)
     return (
-        <Provider store={store}>
+        <Provider {...store}>
             <Component {...pageProps} />
         </Provider>
     )

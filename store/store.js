@@ -15,6 +15,7 @@ class Store {
         makeObservable(this);
         this.hydrate(props);
     }
+
     @action
     hydrate = data => {
         if (data) {
@@ -29,7 +30,7 @@ function initializeStore(initialData) {
 
     // If your page has Next.js data fetching methods that use a Mobx store, it will
     // get hydrated here, check `pages/ssg.js` and `pages/ssr.js` for more details
-
+    const initialStore = {}
 
     // For SSG and SSR always create a new store
     // if (isServer) {
