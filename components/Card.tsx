@@ -9,7 +9,6 @@ type Props = {
     width: number;
     height: number;
 }
-
 const StyledCard = styled(FlexContainer)`
   padding: 2px 16px;
 

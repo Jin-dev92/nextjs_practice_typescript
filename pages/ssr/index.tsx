@@ -9,7 +9,7 @@ export const SSR = ({data: {results}}: any) => {
             <ul className={`flex flex-col list-disc list-inside mb-3`}>
                 {
                     results.map((item: any, index: number) => (
-                        <li key={'item' + index}>{item.title}<Link href={`/ssr/${item?.id}`}></Link></li>
+                        <li key={'item' + index}><Link href={`/ssr/${item.id}`}>{item.title}</Link></li>
                     ))
                 }
             </ul>

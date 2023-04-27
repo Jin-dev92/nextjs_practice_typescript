@@ -1,19 +1,31 @@
 import {NextPage} from "next";
 import {getMovieList} from "../../utils/ExternalAPIList";
+import {useRouter} from "next/router";
+import Image from "next/image";
 
-export const MovieDetailComponent: NextPage = () => {
+const defaultSize = 300
+
+const MovieDetailComponent: NextPage = ({movies}: any) => {
+    const router = useRouter()
+    const movie = movies.find((movie: any) => movie.id.toString() === router.query.id)
+    const {title, backdrop_path} = movie
+    const rootURL = [process.env.NEXT_PUBLIC_MOVIE_DB_IMAGE_ROOT, `w${defaultSize}`].join('/') + backdrop_path
     return (
-        <div>
-
+        <div className={`flex-col-center`}>
+            <div className={`image-wrapper`}>
+                <Image alt={`${title}`} src={`${rootURL}`} width={defaultSize} height={defaultSize}/>
+            </div>
+            {JSON.stringify(movie)}
         </div>
     )
 }
 
-export async function getStaticProps(context:any) {
-    console.log(context)
+export async function getStaticProps(context: any) {
+    const res = await getMovieList()
+    const {data} = res
+    const {page, results: movies} = data
     return {
-        // Passed to the page component as props
-        props: {post: {}},
+        props: {movies},
     }
 }
 
@@ -30,24 +42,17 @@ export async function getStaticPaths() {
 
     // Call an external API endpoint to get posts
     const res = await getMovieList()
-    // const posts = await res?.data
     const {data: movies} = res
+    const {page, results} = movies
     // Get the paths we want to prerender based on posts
     // In production environments, prerender all pages
     // (slower builds, but faster initial page load)
-    const paths = movies.map((movie: any) => ({
-        params: {id: movie.id},
+    const paths = results.map((movie: any) => ({
+        params: {id: movie.id.toString()},
     }))
 
     // { fallback: false } means other routes should 404
     return {paths, fallback: false}
 }
 
-// export async function getStaticPaths(context: any) {
-//     const res = await getMovieList()
-//     const paths = res.data.map(({id}: any) => ({params: {id}}));
-//     return {
-//         paths: [],
-//         fallback: false,
-//     };
-// }
+export default MovieDetailComponent
